@@ -37,6 +37,7 @@ class ComplexOperations
 		$addition_item->set('imaginary', $number_2->imaginary * (-1));
 		$numerator = self::Multi($number_1, $addition_item);
 		$divider_value = ($number_2->real * $number_2->real - $number_2->imaginary * $number_2->imaginary * (-1));
+		if ($divider_value == 0) $divider_value = 1;
 		$result->set('real', $numerator->real / $divider_value);
 		$result->set('imaginary', $numerator->imaginary / $divider_value);
 		return $result;
